@@ -60,3 +60,22 @@ csvFile = r'acw_user_data (1).csv'
 jsonFile = r'Company_Db.json'
  
 convert_json(csvFile,jsonFile)
+
+#  Finding the errors/empty values in the dict
+
+with open("Company_Db.json",'r') as error_file:
+    search = json.load(error_file)
+
+
+def find_errors(error):
+    error = ""
+    
+    dependent_list = []
+
+    if error in search.values():
+        dependent_list.append(error)
+        num_errors = len(dependent_list)
+
+        print(" {} Problematic contents found".format(num_errors))
+
+find_errors(" ")
